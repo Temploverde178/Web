@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+<?php
+/*365a8*/
+
+
+
+/*365a8*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	
+include_once 'conectar/conn_bd.php';   
+$res_pag = $conexion->prepare("SELECT * FROM `t_paginas` WHERE `tipo` LIKE '%gestion%' ORDER BY `id` DESC ");
+$res_pag->execute();
+$res_noti = $res_pag->fetchAll();
+// Clientes
+$res_cli = $conexion->prepare("SELECT * FROM `t_galerias_img` WHERE `id_galeria` = 21 ");
+$res_cli->execute();
+$res_c = $res_cli->fetchAll();
+
+// Las noticias
+$res_nw = $conexion->prepare("SELECT * FROM `t_paginas` WHERE `tipo` LIKE '%noticias%' ORDER BY `id` DESC ");
+$res_nw->execute();
+$res_new = $res_nw->fetchAll();
+
+
+$res_config = $conexion->prepare("SELECT * FROM `t_config`");
+$res_config->execute();
+$res_cc = $res_config->fetchAll();
+
+foreach ($res_cc as $config) { 
+    $punto_atencion = $config["punto_atencion"];
+    $linea_atencion = $config["linea_atencion"];
+    $whatsapp = $config["whatsapp"];
+    $escribanos            = $config["escribanos"];    
+  } 
+
+ ?>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta name="google-site-verification" content="dAgW57EkiJkjihHbGNFD98RdQJ7eIlo_1NRdaw3898k" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="ruta/a/owl.carousel.min.css">
+    <link rel="stylesheet" href="ruta/a/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="favicon.ico" />
+	<!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+
+	<!-- Document Title
+	============================================= -->
+	<title>Durangar | Servicios integrales</title>
+<link rel="stylesheet" href="css/colors.css" type="text/css" />
+	<style>
+
+		.revo-slider-emphasis-text {
+			font-size: 64px;
+			font-weight: 700;
+			letter-spacing: -1px;
+			font-family: 'Poppins', sans-serif;
+			padding: 15px 20px;
+			border-top: 2px solid #FFF;
+			border-bottom: 2px solid #FFF;
+		}
+
+		.revo-slider-desc-text {
+			font-size: 20px;
+			font-family: 'Lato', sans-serif;
+			width: 650px;
+			text-align: center;
+			line-height: 1.5;
+		}
+
+		.revo-slider-caps-text {
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: 3px;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.tp-video-play-button { display: none !important; }
+
+		.tp-caption { white-space: nowrap; }
+
+	</style>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+			<?php   include_once 'header.php';  ?>
+		<!-- Header
+		============================================= -->
+		<?php   include_once 'menu.php';  ?>
+		<!-- #header end -->
+
+		<section id="slider" class="slider-element slider-parallax revslider-wrap min-vh-0 include-header">
+			<div class="slider-inner">
+				<!--
+				#################################
+					- THEMEPUNCH BANNER -
+				#################################
+				-->
+				<div id="rev_slider_779_1_wrapper" class="rev_slider_wrapper fullwidth-container" data-alias="default-slider" style="padding:0px;">
+					<!-- START REVOLUTION SLIDER 5.1.4 fullwidth mode -->
+					<div id="rev_slider_779_1" class="rev_slider fullwidthbanner" style="display:none;" data-version="5.1.4">
+						<ul>    <!-- SLIDE  -->
+							<li class="dark" data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000" data-thumb="imgd/iceberg.jpg"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Welcome to Canvas">
+								<!-- MAIN IMAGE -->
+								<img src="imgd/iceberg.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+								<!-- LAYERS -->
+
+								<!-- LAYER NR. 1 -->
+								<div class="tp-fade fadeout fullscreenvideo rs-background-video-layer"
+									data-forcerewind="on"
+									data-volume="mute"
+									data-videowidth="100%"
+									data-videoheight="100%"
+									data-videomp4="images/videos/AlimentacionGeneral.mp4"
+									data-videopreload="preload"
+									data-videoloop="none"
+									data-forceCover="1"
+									data-aspectratio="16:9"
+									data-autoplay="true"
+									data-autoplayonlyfirsttime="false"
+									data-nextslideatend="true"
+						 			style="z-index: 2;">
+								</div>
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text text-uppercase"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="235"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1000"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-textAlign="center"
+								data-endeasing="Power4.easeIn" style="z-index: 3; color: #FFF; white-space: nowrap;">¡Bien Hecho!</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text p-0 border-0"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="260"
+								data-fontsize="['60','60','44','44']"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1200"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-textAlign="center"
+								data-endeasing="Power4.easeIn" style="z-index: 3; color: #FFF; font-size: 60px; white-space: nowrap;">Servicio de alimentación</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text text-start"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="370"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1600"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-width="['550','550','480','360']"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-textAlign="center"
+								data-endeasing="Power4.easeIn" style="z-index: 3; color: #FFF; max-width: 550px; white-space: normal;">Está dirigido por profesionales en el área, nutricionista, Chef y personal 
+calificado, quienes unificando esfuerzos, ofrecen un menú variado, 
+completo, nutritivo y balanceado.</div>
+
+								<div class="tp-caption customin ltl tp-resizeme"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="470"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1550"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="#" class="button button-border button-large button-light button-rounded text-end m-0"><span>Ver más</span><i class="icon-angle-right"></i></a></div>
+
+							</li>
+							<!-- SLIDE  -->
+							<li class="dark" data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000" data-thumb="imgd/cate.jpg"  data-saveperformance="off"  data-title="Mobile Ready Design">
+								<!-- MAIN IMAGE -->
+								<img src="imgd/cate.jpg"  alt="video_typing_cover"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+								<!-- LAYERS -->
+
+								<!-- LAYER NR. 1 -->
+								<div class="tp-fade fadeout fullscreenvideo rs-background-video-layer"
+									data-forcerewind="on"
+									data-volume="mute"
+									data-videowidth="100%"
+									data-videoheight="100%"
+									data-videomp4="video/cate.mp4"
+									
+									data-videopreload="preload"
+									data-videoloop="none"
+									data-forceCover="1"
+									data-aspectratio="16:9"
+									data-autoplay="true"
+									data-autoplayonlyfirsttime="false"
+									data-nextslideatend="true">
+								</div>
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption fadeout ltl tp-resizeme revo-slider-emphasis-text text-uppercase"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="235"
+								data-fontsize="['60','60','46','38']"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1000"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="3000"
+								data-textAlign="center"
+								data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;">Eventos especiales:
+</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="400"
+								data-width="['650','650','480','360']"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1200"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-textAlign="center"
+								data-endeasing="Power4.easeIn" style="z-index: 3; max-width: 650px; white-space: normal;">Banquetes, comestibles complementarios,
+cenas de navidad y año nuevo, desayunos almuerzos y cenas especiales
+según solicitudes expresas de nuestros clientes.</div>
+
+								<div class="tp-caption customin ltl tp-resizeme"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="503"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1350"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="#" class="button button-border button-white button-light button-large button-rounded text-end m-0"><span>Ver Más</span><i class="icon-angle-right"></i></a></div>
+
+							</li>
+							<!-- SLIDE  -->
+							<li class="dark" data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000" data-thumb="images/videos/explore-poster.jpg"  data-saveperformance="off"  data-title="Infinite Possibilities">
+								<!-- MAIN IMAGE -->
+								<img src="images/videos/explore-poster.jpg"  alt="video_space_cover"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+								<!-- LAYERS -->
+
+								<!-- LAYER NR. 1 -->
+								<div class="tp-fade fadeout fullscreenvideo rs-background-video-layer"
+									data-forcerewind="on"
+									data-volume="mute"
+									data-videowidth="100%"
+									data-videoheight="100%"
+									data-videomp4="video/lavando.mp4"
+									data-videopreload="preload"
+									data-videoloop="none"
+									data-forceCover="1"
+									data-aspectratio="16:9"
+									data-autoplay="true"
+									data-autoplayonlyfirsttime="false"
+									data-nextslideatend="true"
+									>
+								</div>
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text text-uppercase"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="235"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1000"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;">¡Bien Hecho!</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text p-0 border-0"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="260"
+								data-fontsize="['60','60','46','38']"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1200"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-textAlign="center"
+								data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;">Servicio de lavanderia</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="370"
+								data-width="['650','650','480','360']"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1400"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-textAlign="center"
+								data-endeasing="Power4.easeIn" style="z-index: 3; max-width: 650px; white-space: normal;">Durante este proceso utilizamos productos bio-degradables que nos  permiten cumplir con nuestras políticas ambientales y contribuir con la  protección del medio ambiente</div>
+
+								<div class="tp-caption customin ltl tp-resizeme"
+								data-x="center" data-hoffset="0"
+								data-y="top" data-voffset="478"
+								data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1550"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="#" class="button button-border button-white button-light button-large button-rounded text-end m-0"><span>Ver más</span><i class="icon-angle-right"></i></a></div>
+
+							</li>
+						</ul>
+					</div>
+				</div><!-- END REVOLUTION SLIDER -->
+			</div>
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+
+				<div class="promo promo-full promo-border p-5 header-stick bottommargin-lg">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-12 col-lg">
+								<h3>Durangar  <span>servicios integrales</span> es una empresa dedicada al</h3>
+								<span>
+servicio de alimentación, camarería, lavandería, aseo y mantenimiento de
+instalaciones con más de 17 años de experiencia al servicio del sector,
+público y privado.</span>
+							</div>
+							<div class="col-12 col-lg-auto mt-4 mt-lg-0">
+								<a href="ver_servicios.php" class="button button-reveal button-large button-circle text-end m-0"><i class="icon-angle-right"></i><span>Conocer más</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			<!-- ============================================= --> 
+			<!-- Content
+		============================================= -->
+		<section id="contentxxx">
+
+			<div class="content-wrapxxx">
+
+				<div class="container clearfix">
+						<div class="fancy-title title-double-border title-border-colorxxx">
+						<h1>Nuestros Servicios</h1>
+					</div>
+					<div class="row grid-container" data-layout="masonry" style="overflow: visible">
+						<div class="col-lg-4 mb-4">
+							<div class="flip-card text-center">
+								<div class="flip-card-front dark" style="background-image: url('imgd/servicios/serv_02.jpg')">
+									<div class="flip-card-inner">
+										<div class="card bg-transparent border-0 text-center">
+											<div class="card-body">
+												<i class="icon-line2-check h1"></i>
+												<h3 class="card-title">Eventos especiales</h3>
+												<p class="card-text fw-normal">Como parte del servicio y de nuestro menú  variado se realizan diversos festivales</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="flip-card-back" style="background-image: url('imgd/servicios/serv_01.jpg');">
+									<div class="flip-card-inner">
+										<p class="mb-2 text-white">Como parte del servicio y de nuestro menú 
+variado se realizan diversos festivales,que nos 
+permiten deleitarnos con preparaciones de la 
+gastronomía nacional e internaciona </p>
+										<a href="internas.php?id_pagina=2" type="button" class="btn btn-outline-light mt-2" >Ver más</a>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 mb-4">
+							<div class="flip-card text-center top-to-bottom">
+								<div class="flip-card-front dark" style="background-image: url('imgd/servicios/serv_lava.jpg');">
+									<div class="flip-card-inner">
+										<div class="card bg-transparent border-0 text-center">
+											<div class="card-body">
+												<i class="icon-line2-check h1"></i>
+												<h3 class="card-title">Servicio lavanderia</h3>
+												<p class="card-text fw-normal">Las prendas se recogen en horas de la mañana en tulas marcadas en horas de la mañana</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="flip-card-back" style="background-image: url('imgd/servicios/serv_lava02.jpg');">
+									<div class="flip-card-inner">
+										<p class="mb-2 text-white">Las prendas se recogen en horas de la mañana en tulas marcadas con
+el número de la habitación , aplicando el proceso de etiquetado y marquilla de</p>
+										<a href="internas.php?id_pagina=7" type="button" class="btn btn-outline-light mt-2" >Ver más</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 mb-4">
+							<div class="flip-card text-center">
+								<div class="flip-card-front dark" data-height-xl="505" style="background-image: url('imgd/servicios/1.jpg');">
+									<div class="flip-card-inner">
+										<div class="card bg-transparent border-0 text-center">
+											<div class="card-body">
+												<i class="icon-food2 h1"></i>
+												<h3 class="card-title">Servicio de alimentación</h3>
+												<p class="card-text fw-normal">Está dirigido por profesionales en el área, nutricionista, Chef y personal 
+calificado.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="flip-card-back" data-height-xl="505" style="background-image: url('imgd/servicios/2.jpg');">
+									<div class="flip-card-inner">
+										<p class="mb-2 text-white"> Está dirigido por profesionales en el área, nutricionista, Chef y personal  quienes unificando esfuerzos, ofrecen un menú variado, completo, nutritivo y balanceado</p>
+										<a href="internas.php?id_pagina=3" type="button" class="btn btn-outline-light mt-2" >Ver más</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 mb-4">
+							<div class="flip-card text-center top-to-bottom">
+								<div class="flip-card-front dark" data-height-xl="200" style="background-image: url('imgd/servicios/serv_limpia.jpg');">
+								
+									<div class="flip-card-inner">
+										<div class="card bg-transparent border-0 text-center">
+											<div class="card-body">
+												<i class="icon-line2-check h1"></i>
+												<h3 class="card-title">Aseo de Instalaciones</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="flip-card-back" data-height-xl="200" style="background-image: url('imgd/servicios/serv_limpia33.jpg');">
+									<div class="flip-card-inner">
+										<p class="mb-2 text-white">Personal con experiencia en camarería.  Orden y limpieza de instalaciones..</p>
+										<a href="internas.php?id_pagina=5" type="button" class="btn btn-outline-light mt-2" >Ver más</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 mb-4">
+							<div class="flip-card top-to-bottom">
+								<div class="flip-card-front dark" data-height-xl="200" style="background-image: url('imgd/servicios/serv_limpia02.jpg');">
+									<div class="flip-card-inner">
+										<div class="card bg-transparent border-0">
+											<div class="card-body">
+												<h3 class="card-title mb-0">Camareria</h3>
+												<span class="fst-italic">aseo a las habitaciones</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="flip-card-back" data-height-xl="200" style="background-image: url('imgd/servicios/serv_cama.jpg');">
+									<div class="flip-card-inner">
+										<p class="mb-2 text-white">El servicio de aseo a las habitaciones se realiza a diario, removiendo la 
+suciedad de cuarto dormitorio baños ,pisos, paredes y ventanas, se....</p>
+										<a href="internas.php?id_pagina=6" type="button" class="btn btn-outline-light mt-2" >Ver más</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<section id="content">
+			<div class="content-wrap">
+					<div class="container clearfix">
+
+					<div class="row col-mb-50">
+									<div class="w-100"></div>
+
+						<div class="col-md-8">
+							<div class="fancy-title title-bottom-border">
+								<h3>CERTIFICACIONES</h3>
+							</div>
+
+							<img src="imgd/certificaciones.jpg">
+							<span></span>
+						</div>
+
+						<div class="col-md-4">
+							<h2>	<span>SERVICIOS INTEGRALES</span></h2>
+							
+							Gracias al esfuerzo y dedicación de nuestro talentoso equipo, 
+hemos renovado nuestras certificaciones en ISO 22000, 9001, 45001, 14001 y NTC5830. En 2023, 
+obtuvimos una calificación del 97% en el RUC y hemos sido certificados en Prácticas Laborales Responsables (PLR).
+						</div>
+
+							</div>
+					</div>	
+					</div>
+					<!--  -->
+					<div class="fancy-title title-double-border">
+						<h1>¿Tienes preguntas?​</h1>
+					</div>
+					<!-- Contact Info
+					============================================= -->
+					<div class="row col-mb-50" style="padding-bottom: 25px;">
+						<div class="col-sm-6 col-lg-3">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-map-marker2"></i></a>
+								</div>
+								<div class="fbox-content">
+									<h3>Punto de atención<span class="subtitle"><?php echo $punto_atencion	 ?></span></h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-lg-3">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-phone3"></i></a>
+								</div>
+								<div class="fbox-content">
+									<h3>Línea de atención<span class="subtitle"><?php echo  $linea_atencion	 ?></span></h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-lg-3">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-whatsapp"></i></a>
+								</div>
+								<div class="fbox-content">
+									<h3>WhatsApp<span class="subtitle"><?php echo $whatsapp 	 ?></span></h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-lg-3">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-line-message-circle
+"></i></a>
+								</div>
+								<div class="fbox-content">
+									<h3>Escribanos<span class="subtitle"><?php echo $escribanos	 ?></span></h3>
+								</div>
+							</div>
+						</div>
+					</div><!-- Contact Info End -->
+					<!-- Ultimas noticias -->
+					<div class="fancy-title title-double-border">
+						<h1>PROGRAMA DE GESTIÓN HUMANA</h1>
+					</div>
+
+					
+					<div id="oc-posts" class="owl-carousel posts-carousel carousel-widget posts-md" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
+    <!-- Inicio -->
+    <?php foreach ($res_noti as $noticias) { ?>
+    <div class="oc-item">
+        <div class="entry">
+            <div class="entry-image">
+                <a href="admin000/up/uploads/<?php echo $noticias["imagen_principal"] ?>" data-lightbox="image"><img src="admin000/up/uploads/<?php echo $noticias["imagen_principal"] ?>" alt="Standard Post with Image" style="max-width: 100%; height: auto;"></a>
+            </div>
+            <div class="entry-title title-xs nott">
+                <h3><a href="internas.php?id_pagina=<?php echo $noticias["id"] ?>"><?php echo $noticias["titulo"] ?></a></h3>
+            </div>
+            <div class="entry-content">
+                <p><?php 
+                  $string= substr($noticias["contenido"], 0, 100);
+                  echo  $string; ?>.....</p>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+</div>
+						<!--  Fin -->
+
+					</div>
+					<!--  -->
+					<div class="fancy-title title-double-border">
+						<h1>ULTIMAS NOTICIAS</h1>
+					</div>
+
+					
+					<div id="oc-posts" class="owl-carousel posts-carousel carousel-widget posts-md" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
+						<!-- Inicio -->
+						<?php 	foreach ($res_new as $noticiasok) {  ?>
+						<div class="oc-item">
+							<div class="entry">
+								<div class="entry-imagex">
+
+									<a href="internas.php?id_pagina=<?php echo $noticiasok["id"] ?>" >
+										<img src="admin000/up/uploads/<?php echo $noticiasok["imagen_principal"] ?>" 
+										width="286" height="150" alt="Noticias"></a>
+								</div>
+								<div class="entry-title title-xs nott">
+									<h3><a href="internas.php?id_pagina=<?php echo $noticiasok["id"] ?>" ><?php echo $noticiasok["titulo"] ?></a></h3>
+								</div>
+								<div class="entry-meta">
+									<ul>
+										<li><i class="icon-calendar3"></i> <?php echo $noticiasok["fecha"] ?></li>
+										<li><a href="blog-single.html#comments"><i class="icon-comments"></i> <?php echo $noticiasok["vistas"] ?></a></li>
+										<li><a href="#"><i class="icon-camera-retro"></i></a></li>
+									</ul>
+								</div>
+								<div class="entry-content">
+									<p><?php 
+                      $string= substr($noticiasok["contenido"], 0, 100);
+                   // echo  $string; ?></p>
+								</div>
+							</div>
+						</div>
+						<?php 	} ?>
+						<!--  Fin -->
+
+					</div>
+
+					<div class="clear"></div>
+					<!-- Clientes -->
+					<div class="fancy-title title-double-border">
+						<h1>Nuestros Clientes</h1>
+					</div>
+					<div id="oc-clients-full" class="owl-carousel image-carousel carousel-widget" data-margin="30" data-nav="false" data-loop="true" data-autoplay="5000" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
+					<?php 	foreach ($res_c as $clientes) {  ?>
+						<a href="#"><img src="admin000/up/uploads/<?php echo $clientes["img"] ?>" alt="Clients"></a>
+					<?php 	} ?>
+						
+
+					</div>
+					
+					<!-- Aqui seguimos wailoo -->
+					</div>	
+					
+				</div>
+			</div>
+		</section><!-- #content end -->
+
+			<!--  -->
+		
+					<!--  -->
+				<div class="container clearfix">
+
+				
+
+					
+
+					
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+			<?php   include_once 'footer.php';  ?>
+		<!-- Footer inicio
+		============================================= -->
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+	<script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+
+	<script>
+		var tpj=jQuery;
+		tpj.noConflict();
+		var $ = jQuery.noConflict();
+
+		tpj(document).ready(function() {
+			var apiRevoSlider = tpj('#rev_slider_779_1').show().revolution(
+			{
+				sliderType:"standard",
+				jsFileLocation:"include/rs-plugin/js/",
+				dottedOverlay:"none",
+				sliderLayout: "fullwidth",
+				delay:9000,
+				responsiveLevels: [1240, 1024, 778, 480],
+				visibilityLevels: [1240, 1024, 778, 480],
+				gridwidth: [1200, 1024, 778, 480],
+				gridheight: [700, 768, 960, 720],
+				hideThumbs:200,
+
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:3,
+
+				touchenabled:"on",
+				onHoverStop:"on",
+
+				swipe_velocity: 0.7,
+				swipe_min_touches: 1,
+				swipe_max_touches: 1,
+				drag_block_vertical: false,
+
+
+				navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "hades",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div></div>',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            }
+                        },
+                        thumbnails: {
+                            style: "hades",
+                            enable: true,
+                            width: 50,
+                            height: 50,
+                            min_width: 100,
+                            wrapper_padding: 5,
+                            wrapper_color: "transparent",
+                            wrapper_opacity: "1",
+                            tmp: '<span class="tp-thumb-img-wrap">  <span class="tp-thumb-image"></span></span>',
+                            visibleAmount: 5,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            span: false,
+                            position: "inner",
+                            space: 5,
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 20
+                        }
+                    },
+
+				soloArrowLeftHalign:"left",
+				soloArrowLeftValign:"center",
+				soloArrowLeftHOffset:20,
+				soloArrowLeftVOffset:0,
+
+				soloArrowRightHalign:"right",
+				soloArrowRightValign:"center",
+				soloArrowRightHOffset:20,
+				soloArrowRightVOffset:0,
+
+				shadow:0,
+				fullWidth:"off",
+				fullScreen:"on",
+
+				spinner:"spinner0",
+
+				stopLoop:"off",
+				stopAfterLoops:-1,
+				stopAtSlide:-1,
+
+				shuffle:"off",
+
+
+				forceFullWidth:"off",
+				fullScreenAlignForce:"off",
+
+				hideThumbsOnMobile:"off",
+				hideNavDelayOnMobile:1500,
+				hideBulletsOnMobile:"off",
+				hideArrowsOnMobile:"off",
+				hideThumbsUnderResolution:0,
+
+				hideSliderAtLimit:0,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				startWithSlide:0,
+			});
+
+			apiRevoSlider.on("revolution.slide.onloaded",function (e) {
+				setTimeout( function(){ SEMICOLON.slider.sliderDimensions(); }, 200 );
+			});
+
+			apiRevoSlider.on("revolution.slide.onchange",function (e,data) {
+				SEMICOLON.slider.revolutionSliderMenu();
+			});
+		}); //ready
+	</script>
+
+</body>
+</html>
